@@ -31,4 +31,4 @@ switch (x) {
 		break
 }
 
-room_goto(rm_01)
+room_goto(r_fase_01)
