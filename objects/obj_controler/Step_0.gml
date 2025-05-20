@@ -1,0 +1,1 @@
+//if instance_exists(obj_player) window_set_caption(string(obj_player.x % global.largura))

@@ -1,0 +1,1 @@
+if (indice < opcoes_max - 1) indice ++

@@ -1,0 +1,1 @@
+if indice > 0 indice --

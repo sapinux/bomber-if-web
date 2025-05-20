@@ -1,0 +1,1 @@
+if (opcoes[indice] == "Voltar") room_goto(rm_01)
