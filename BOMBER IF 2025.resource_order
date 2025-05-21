@@ -44,6 +44,7 @@
     {"name":"obj_player_select","order":6,"path":"objects/obj_player_select/obj_player_select.yy",},
     {"name":"rm_player_select","order":1,"path":"rooms/rm_player_select/rm_player_select.yy",},
     {"name":"scr_carregar_sprites","order":4,"path":"scripts/scr_carregar_sprites/scr_carregar_sprites.yy",},
+    {"name":"scr_enviar","order":5,"path":"scripts/scr_enviar/scr_enviar.yy",},
     {"name":"scr_explosao","order":1,"path":"scripts/scr_explosao/scr_explosao.yy",},
     {"name":"scr_jogador_morrendo","order":3,"path":"scripts/scr_jogador_morrendo/scr_jogador_morrendo.yy",},
     {"name":"scr_verificar","order":2,"path":"scripts/scr_verificar/scr_verificar.yy",},

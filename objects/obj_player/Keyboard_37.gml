@@ -7,6 +7,7 @@ if vivo {
 		if (place_free(x - vel, y)) || (place_meeting(x - vel, y, obj_explosao)) { 
 			x -= vel								
 			sprite_index = imagem[8]	//carregar sprite
+			//scr_enviar()
 		} 
 		
 	//deslizar na quina da parede
