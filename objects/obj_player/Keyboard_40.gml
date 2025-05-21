@@ -6,12 +6,19 @@ if vivo {
 		if (place_free(x , y + vel)) || (place_meeting(x, y + vel, obj_explosao)) {
 			y += vel
 			sprite_index = imagem[5]	//carregar sprite
+			scr_enviar("position_update", "y", y)
 		}
 	   
     //deslizar na quina da parede
 	if (keyboard_check(vk_left)==false) && (keyboard_check(vk_right) == false) && (place_meeting(x, y + vel, obj_parede)) {
-		if (x - (floor(x / global.largura) * global.largura) <= 10) && (frac(floor(x / global.largura) / 2) == 0) x -= vel
-		if (x - (floor(x / global.largura) * global.largura) >= 05) && (frac(floor(x / global.largura) / 2) != 0) x += vel
+		if (x - (floor(x / global.largura) * global.largura) <= 10) && (frac(floor(x / global.largura) / 2) == 0) {
+			x -= vel
+			scr_enviar("position_update", "x", x)
+		}
+		if (x - (floor(x / global.largura) * global.largura) >= 05) && (frac(floor(x / global.largura) / 2) != 0) {
+			x += vel
+			scr_enviar("position_update", "x", x)
+		}
 	}
 	
 	//chutar a bomba
