@@ -20,11 +20,15 @@ switch(async_load[?"type"]) {
 		var buffer_processed = buffer_read(buffer_raw, buffer_text)
 		var real_data = json_decode(buffer_processed)
 		var event_name = real_data[? "event_name"]
+		show_debug_message("O server nos enviou: " + buffer_processed)	//depuração
 		
 		switch (event_name) {
 			case "Você foi criado!":
 				global.cliente_id = (real_data[? "id"])
-				show_debug_message("ID definido pelo server: " + string(global.cliente_id))
+				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
+				break
+			case "Jogador na sala!":
+				
 				break
 		}
 		break
