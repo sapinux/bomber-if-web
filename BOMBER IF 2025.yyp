@@ -79,6 +79,7 @@
     {"id":{"name":"scr_enviar","path":"scripts/scr_enviar/scr_enviar.yy",},},
     {"id":{"name":"scr_explosao","path":"scripts/scr_explosao/scr_explosao.yy",},},
     {"id":{"name":"scr_jogador_morrendo","path":"scripts/scr_jogador_morrendo/scr_jogador_morrendo.yy",},},
+    {"id":{"name":"scr_posicionar_jogador","path":"scripts/scr_posicionar_jogador/scr_posicionar_jogador.yy",},},
     {"id":{"name":"scr_verificar","path":"scripts/scr_verificar/scr_verificar.yy",},},
     {"id":{"name":"spr_blue_andando_baixo","path":"sprites/spr_blue_andando_baixo/spr_blue_andando_baixo.yy",},},
     {"id":{"name":"spr_blue_andando_cima","path":"sprites/spr_blue_andando_cima/spr_blue_andando_cima.yy",},},
