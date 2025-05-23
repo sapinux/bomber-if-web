@@ -26,8 +26,8 @@ switch(async_load[?"type"]) {
 				//cria um oponente para representar o jogador
 				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 				with (oponente) {
-					jogador = (real_data[? "jogador"])
-					scr_posicionar_jogador(oponente, jogador)
+					global.jogadores[(real_data[? "jogador"])] = id
+					scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
 				
 				var buffer = buffer_create(global.size, buffer_grow, global.size)	//buffer da mensagem p o server
@@ -41,15 +41,17 @@ switch(async_load[?"type"]) {
 				
 				break
 			case "Oponente criado!":
-				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
-				with (oponente) {
-					jogador = (real_data[? "jogador"])
-					scr_posicionar_jogador(oponente, jogador)
+				if (global.jogadores[(real_data[? "jogador"])] == noone) {	//verifica se o oponente já foi criado
+					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
+					with (oponente) {
+						global.jogadores[(real_data[? "jogador"])] = id
+						scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
+					}
 				}
 				break
 			case "Position update!":
-				if (real_data[? "x"]) obj_oponente.x = (real_data[? "x"])
-				if (real_data[? "y"]) obj_oponente.y = (real_data[? "y"])
+				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
+				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
 				break
 		}
 		break

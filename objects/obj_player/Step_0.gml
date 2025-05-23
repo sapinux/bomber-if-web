@@ -1,4 +1,4 @@
-window_set_caption("id: " + string(global.cliente_id))
+window_set_caption("id: " + string(global.cliente_id) + " op: " + string(instance_number(obj_oponente)))
 //quando concluir a animacao de morte
 if (sprite_index == imagem[9]) && (image_index>=4) {
 	global.id_pai = 0
