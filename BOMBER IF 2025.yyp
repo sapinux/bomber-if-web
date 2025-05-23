@@ -66,6 +66,7 @@
     {"id":{"name":"obj_game_config","path":"objects/obj_game_config/obj_game_config.yy",},},
     {"id":{"name":"obj_limite","path":"objects/obj_limite/obj_limite.yy",},},
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
+    {"id":{"name":"obj_oponente","path":"objects/obj_oponente/obj_oponente.yy",},},
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
     {"id":{"name":"obj_planta","path":"objects/obj_planta/obj_planta.yy",},},
     {"id":{"name":"obj_player_select","path":"objects/obj_player_select/obj_player_select.yy",},},

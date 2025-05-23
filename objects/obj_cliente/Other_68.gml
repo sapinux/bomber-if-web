@@ -28,7 +28,10 @@ switch(async_load[?"type"]) {
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
 			case "Jogador na sala!":
-				
+				var oponente = instance_create_layer(0, 0, "Players", obj_oponente)
+				with (oponente) {
+					
+				}
 				break
 		}
 		break
