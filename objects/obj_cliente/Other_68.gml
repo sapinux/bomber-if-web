@@ -3,11 +3,9 @@ switch(async_load[?"type"]) {
 		//código que é executado quando nos conectamos
 		show_debug_message("Conectamos com o server")		
 		
-					
-		
-		
 		break
 	case network_type_data: 
+		
 		//código que é executado quando recebemos qualquer dado do server
 		var buffer_raw = async_load[? "buffer"];
 		var buffer_processed = buffer_read(buffer_raw, buffer_text)
@@ -52,6 +50,11 @@ switch(async_load[?"type"]) {
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
+				break
+			case "Create item!":
+				if (real_data[? "item"]) == "bomba"
+					var bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
+					bomba.poder_bomba = (real_data[? "poder_bomba"])
 				break
 		}
 		break
