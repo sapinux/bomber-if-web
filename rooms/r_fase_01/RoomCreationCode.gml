@@ -55,3 +55,5 @@ do {
 	}	
 }
 until (cont == 2)										//quantidade de icones de chutar bomba
+
+scr_posicionar_jogador()	//posicionar jogador na arena
