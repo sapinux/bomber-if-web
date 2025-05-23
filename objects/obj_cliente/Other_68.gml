@@ -56,6 +56,10 @@ switch(async_load[?"type"]) {
 					var bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
 					bomba.poder_bomba = (real_data[? "poder_bomba"])
 				break
+			case "Chutar bomba!":
+				with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x + (real_data[? "x"]), global.jogadores[(real_data[? "jogador"])].y, obj_bomba))
+					hspeed = -4
+				break
 		}
 		break
 }
