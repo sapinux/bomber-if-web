@@ -1,1 +1,1 @@
-player = 0	//recebera a identificacao na sala
+jogador = 0	//recebera a identificacao na sala

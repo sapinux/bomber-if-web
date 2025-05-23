@@ -56,4 +56,5 @@ do {
 }
 until (cont == 2)										//quantidade de icones de chutar bomba
 
-scr_posicionar_jogador()	//posicionar jogador na arena
+if instance_exists(obj_oponente) obj_oponente.visible = true
+scr_posicionar_jogador(obj_player, global.cliente_id)	//posicionar jogador na arena

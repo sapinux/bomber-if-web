@@ -1,6 +1,6 @@
-function scr_posicionar_jogador() {
-	with (obj_player) {
-		switch (global.cliente_id) {
+function scr_posicionar_jogador(player, player_id) {
+	with (player) {
+		switch (player_id) {
 			case 1:
 				x = 48
 				y = 32

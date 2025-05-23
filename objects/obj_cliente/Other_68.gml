@@ -1,15 +1,8 @@
 switch(async_load[?"type"]) {
 	case network_type_non_blocking_connect:
 		//código que é executado quando nos conectamos
-			
-		var buffer = buffer_create(global.size, buffer_grow, global.size)	//buffer da mensagem p o server
-		var data = ds_map_create()			//criacao do mapa de valores
-		data[? "event_name"] = "create_player_request"
-		data[? "name"] = "sapinux" //get_string_async("Digite o nome", "sem nome") 
-				
-		buffer_write(buffer , buffer_text  , json_encode(data));	//escrever conteudo do buffer
-		network_send_raw(global.socket, buffer , buffer_tell(buffer));	//envio da msg
-		ds_map_destroy(data);
+		show_debug_message("Conectamos com o server")		
+		
 					
 		
 		
@@ -22,16 +15,41 @@ switch(async_load[?"type"]) {
 		var event_name = real_data[? "event_name"]
 		show_debug_message("O server nos enviou: " + buffer_processed)	//depuração
 		
+		var oponente
+		
 		switch (event_name) {
 			case "Você foi criado!":
 				global.cliente_id = (real_data[? "id"])
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
 			case "Jogador na sala!":
-				var oponente = instance_create_layer(0, 0, "Players", obj_oponente)
+				//cria um oponente para representar o jogador
+				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 				with (oponente) {
-					
+					jogador = (real_data[? "jogador"])
+					scr_posicionar_jogador(oponente, jogador)
 				}
+				
+				var buffer = buffer_create(global.size, buffer_grow, global.size)	//buffer da mensagem p o server
+				var data = ds_map_create()			//criacao do mapa de valores
+				data[? "event_name"] = "Create oponente"
+				data[? "id"] = global.cliente_id	//envia o numero do jogador
+				
+				buffer_write(buffer , buffer_text  , json_encode(data));	//escrever conteudo do buffer
+				network_send_raw(global.socket, buffer , buffer_tell(buffer));	//envio da msg
+				ds_map_destroy(data);
+				
+				break
+			case "Oponente criado!":
+				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
+				with (oponente) {
+					jogador = (real_data[? "jogador"])
+					scr_posicionar_jogador(oponente, jogador)
+				}
+				break
+			case "Position update!":
+				if (real_data[? "x"]) obj_oponente.x = (real_data[? "x"])
+				if (real_data[? "y"]) obj_oponente.y = (real_data[? "y"])
 				break
 		}
 		break
