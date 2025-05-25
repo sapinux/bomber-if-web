@@ -21,22 +21,15 @@ switch(async_load[?"type"]) {
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
 			case "Jogador na sala!":
-				//cria um oponente para representar o jogador
+				//cria um oponente para representar o jogador que entrou na sala
 				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 				with (oponente) {
 					global.jogadores[(real_data[? "jogador"])] = id
 					scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
 				
-				var buffer = buffer_create(global.size, buffer_grow, global.size)	//buffer da mensagem p o server
-				var data = ds_map_create()			//criacao do mapa de valores
-				data[? "event_name"] = "Create oponente"
-				data[? "id"] = global.cliente_id	//envia o numero do jogador
-				
-				buffer_write(buffer , buffer_text  , json_encode(data));	//escrever conteudo do buffer
-				network_send_raw(global.socket, buffer , buffer_tell(buffer));	//envio da msg
-				ds_map_destroy(data);
-				
+				scr_enviar("Create oponente")	//envia para o jogador que tambem estou na sala
+								
 				break
 			case "Oponente criado!":
 				if (global.jogadores[(real_data[? "jogador"])] == noone) {	//verifica se o oponente já foi criado
@@ -57,8 +50,17 @@ switch(async_load[?"type"]) {
 					bomba.poder_bomba = (real_data[? "poder_bomba"])
 				break
 			case "Chutar bomba!":
-				with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x + (real_data[? "x"]), global.jogadores[(real_data[? "jogador"])].y, obj_bomba))
-					hspeed = -4
+				if ((real_data[? "x"] < 0) || (real_data[? "x"] > 0)) {
+					with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x + (real_data[? "x"]), global.jogadores[(real_data[? "jogador"])].y, obj_bomba))
+						hspeed = 4 * sign(real_data[? "x"])
+						show_debug_message("valor x " +  string(sign(real_data[? "x"])))	//depuração
+				}
+				if ((real_data[? "y"] < 0) || (real_data[? "y"] > 0)) {
+					with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x , global.jogadores[(real_data[? "jogador"])].y + (real_data[? "y"]), obj_bomba))
+						vspeed = 4 * sign(real_data[? "y"])
+						show_debug_message("valor y" +  string(sign(real_data[? "y"])))	//depuração
+				}
+				
 				break
 		}
 		break

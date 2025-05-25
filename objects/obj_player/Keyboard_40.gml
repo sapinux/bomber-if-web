@@ -24,5 +24,8 @@ if vivo {
 	//chutar a bomba
 	if (place_meeting(x, y + vel, obj_bomba) && (chutar_bomba))
 		with (instance_nearest(x, y + vel, obj_bomba))
-			if solid vspeed = 4
+			if solid {
+				scr_enviar("chutar_bomba", "y", (other.vel))	
+				vspeed = 4
+			}
 }
