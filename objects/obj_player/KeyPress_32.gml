@@ -18,19 +18,24 @@ if vivo {
 				//verifica a direcao do player
 				switch (other.direcao) {
 					case "cima":
+						scr_enviar("lancar_bomba", "item", "bomba", "direcao", "cima")
 						vspeed = -4
 						break
 					case "baixo":
+						scr_enviar("lancar_bomba", "item", "bomba", "direcao", "baixo")
 						vspeed = 4
 						break
 					case "esquerda":
+						scr_enviar("lancar_bomba", "item", "bomba", "direcao", "esquerda")
 						hspeed = -4
 						break
 					case "direita":
+						scr_enviar("lancar_bomba", "item", "bomba", "direcao", "direita")
 						hspeed = 4
 						break
 				}
 			}
+			
 		}
 	}
 }

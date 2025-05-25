@@ -13,6 +13,7 @@ switch(async_load[?"type"]) {
 		var event_name = real_data[? "event_name"]
 		show_debug_message("O server nos enviou: " + buffer_processed)	//depuração
 		
+		var bomba
 		var oponente
 		
 		switch (event_name) {
@@ -46,21 +47,39 @@ switch(async_load[?"type"]) {
 				break
 			case "Create bomba!":
 				if (real_data[? "item"]) == "bomba"
-					var bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
+					bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
 					bomba.poder_bomba = (real_data[? "poder_bomba"])
 				break
 			case "Chutar bomba!":
 				if ((real_data[? "x"] < 0) || (real_data[? "x"] > 0)) {
 					with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x + (real_data[? "x"]), global.jogadores[(real_data[? "jogador"])].y, obj_bomba))
 						hspeed = 4 * sign(real_data[? "x"])
-						show_debug_message("valor x " +  string(sign(real_data[? "x"])))	//depuração
 				}
 				if ((real_data[? "y"] < 0) || (real_data[? "y"] > 0)) {
 					with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x , global.jogadores[(real_data[? "jogador"])].y + (real_data[? "y"]), obj_bomba))
 						vspeed = 4 * sign(real_data[? "y"])
-						show_debug_message("valor y" +  string(sign(real_data[? "y"])))	//depuração
 				}
 				
+				break
+			case "Lancar bomba!":
+				if (real_data[? "item"]) == "bomba"
+					bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba_pulando)	//criar bomba pulando
+					with (bomba){
+						switch (real_data[? "direcao"]) {
+							case "cima":
+								vspeed = -4
+								break
+							case "baixo":
+								vspeed = 4
+								break
+							case "esquerda":
+								hspeed = -4
+								break
+							case "direita":
+								hspeed = 4
+								break
+						}
+					}
 				break
 		}
 		break
