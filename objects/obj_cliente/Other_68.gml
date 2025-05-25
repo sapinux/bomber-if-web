@@ -44,7 +44,7 @@ switch(async_load[?"type"]) {
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
 				break
-			case "Create item!":
+			case "Create bomba!":
 				if (real_data[? "item"]) == "bomba"
 					var bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
 					bomba.poder_bomba = (real_data[? "poder_bomba"])
