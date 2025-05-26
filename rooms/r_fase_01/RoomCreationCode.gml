@@ -63,4 +63,8 @@ if global.lider {
 	until (cont == 2)										//quantidade de icones de chutar bomba
 }
 if instance_exists(obj_oponente) obj_oponente.visible = true
+if instance_exists(obj_bonus_bomba) obj_bonus_bomba.visible = true
+if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
+if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
+if instance_exists(obj_bonus_poder_bomba) obj_bonus_poder_bomba.visible = true
 scr_posicionar_jogador(obj_player, global.cliente_id)	//posicionar jogador na arena

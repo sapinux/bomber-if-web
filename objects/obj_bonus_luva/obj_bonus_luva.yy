@@ -14,7 +14,7 @@
     "path":"folders/Objects/Bonus.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -39,5 +39,5 @@
     "name":"spr_parede",
     "path":"sprites/spr_parede/spr_parede.yy",
   },
-  "visible":true,
+  "visible":false,
 }
