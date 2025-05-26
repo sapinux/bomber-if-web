@@ -8,5 +8,5 @@ luva = global.luva						//poder para lancar a bomba
 direcao = "baixo"						//direcao padrao do player
 global.id_pai = id						//player criador da bomba
 imagem = []								//vetor para alocar os sprites do player
-scr_carregar_sprites(global.player)		//carregar sprites no vetor
+scr_carregar_sprites(id, global.player)				//carregar sprites no vetor
 sprite_index = imagem[1]				//carrega sprite basica

@@ -53,14 +53,16 @@ switch(async_load[?"type"]) {
 			case "Iniciar partida!":
 				scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
 				
-			
+				break
 			case "Jogador escolhido!":
 				//global.jogadores[(real_data[? "jogador"])].cor = real_data[? "item"]	//definir o personagem ---------PAREI AQUI
+				scr_carregar_sprites(global.jogadores[(real_data[? "jogador"])], real_data[? "item"])
 				show_debug_message(real_data[? "item"]	)
-			
+				break
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
+				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[4]
 				break
 			
 			case "Create bomba!":
