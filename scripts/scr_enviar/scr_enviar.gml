@@ -1,9 +1,10 @@
-function scr_enviar(event_name, tipo = "", conteudo = "", tipo_2 = "", conteudo_2 = ""){
+function scr_enviar(event_name, tipo = "", conteudo = "", tipo_2 = "", conteudo_2 = "", tipo_3 = "", conteudo_3 = ""){
 		var buffer = buffer_create(global.size, buffer_grow, global.size)	//buffer da mensagem p o server
 		var data = ds_map_create()			//criacao do mapa de valores
 		data[? "event_name"] = event_name
 		if (tipo != "") && (conteudo != "") data[? tipo] = conteudo				
 		if (tipo_2 != "") && (conteudo_2 != "") data[? tipo_2] = conteudo_2
+		if (tipo_3 != "") && (conteudo_3 != "") data[? tipo_3] = conteudo_3
 		data[? "id"] = global.cliente_id	//a identificação do jogador
 				
 		buffer_write(buffer , buffer_text  , json_encode(data));	//escrever conteudo do buffer

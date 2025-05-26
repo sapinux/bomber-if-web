@@ -19,6 +19,7 @@ switch(async_load[?"type"]) {
 		switch (event_name) {
 			case "Você foi criado!":
 				global.cliente_id = (real_data[? "id"])
+				if global.cliente_id == 1 global.lider = true //se for o primeiro da sala, assumira a lideranca
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
 			case "Jogador na sala!":
@@ -80,6 +81,22 @@ switch(async_load[?"type"]) {
 								break
 						}
 					}
+				break
+			case "Create bonus!":
+				switch (real_data[? "item"]) {
+					case "bomba":
+						instance_create_layer(real_data[? "x"], real_data[? "y"], "Bonus", obj_bonus_bomba)
+						break
+					case "poder_bomba":
+						instance_create_layer(real_data[? "x"], real_data[? "y"], "Bonus", obj_bonus_poder_bomba)
+						break
+					case "chutar_bomba":
+						instance_create_layer(real_data[? "x"], real_data[? "y"], "Bonus", obj_bonus_chutar_bomba)
+						break
+					case "luva":
+						instance_create_layer(real_data[? "x"], real_data[? "y"], "Bonus", obj_bonus_luva)
+						break
+				}
 				break
 		}
 		break
