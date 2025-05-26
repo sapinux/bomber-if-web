@@ -1,0 +1,1 @@
+tempo = 0			//contador para iniciar a partida

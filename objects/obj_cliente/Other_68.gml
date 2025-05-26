@@ -19,6 +19,7 @@ switch(async_load[?"type"]) {
 		switch (event_name) {
 			case "Você foi criado!":
 				global.cliente_id = (real_data[? "id"])
+				global.sala = (real_data[? "sala"])
 				if global.cliente_id == 1 global.lider = true //se for o primeiro da sala, assumira a lideranca
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
@@ -30,17 +31,25 @@ switch(async_load[?"type"]) {
 					scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
 				
-				scr_enviar("Create oponente")	//envia para o jogador que tambem estou na sala
-								
+				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
+				
+				//cronometrar inicio da partida
+				if !(global.lider) obj_player_select.tempo = 300			
+				else obj_player_select.tempo = 310	//se for o lider
+				
 				break
 			case "Oponente criado!":
+				//cronometrar inicio da partida
+				if !(global.lider) obj_player_select.tempo = 300		
+				else obj_player_select.tempo = 310	//se for o lider
+				
 				if (global.jogadores[(real_data[? "jogador"])] == noone) {	//verifica se o oponente já foi criado
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 					with (oponente) {
 						global.jogadores[(real_data[? "jogador"])] = id
 						scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 					}
-				}
+				}				
 				break
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])

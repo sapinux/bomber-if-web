@@ -1,4 +1,5 @@
 global.cliente_id = 0												//identificador do cliente
+global.sala = 0														//identificador da sala
 global.size = 1														//tamanho do pacote em bytes
 global.socket = network_create_socket(network_socket_ws)			//tipo de conexao com o server
 global.ip = "200.131.5.41"												//ip do server
