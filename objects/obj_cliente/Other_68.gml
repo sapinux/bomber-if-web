@@ -49,17 +49,26 @@ switch(async_load[?"type"]) {
 					}
 				}				
 				break
+			
 			case "Iniciar partida!":
 				scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
+				
+			
+			case "Jogador escolhido!":
+				//global.jogadores[(real_data[? "jogador"])].cor = real_data[? "item"]	//definir o personagem ---------PAREI AQUI
+				show_debug_message(real_data[? "item"]	)
+			
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
 				break
+			
 			case "Create bomba!":
 				if (real_data[? "item"]) == "bomba"
 					bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba)	//criar bomba
 					bomba.poder_bomba = (real_data[? "poder_bomba"])
 				break
+			
 			case "Chutar bomba!":
 				if ((real_data[? "x"] < 0) || (real_data[? "x"] > 0)) {
 					with (instance_nearest(global.jogadores[(real_data[? "jogador"])].x + (real_data[? "x"]), global.jogadores[(real_data[? "jogador"])].y, obj_bomba))

@@ -1,5 +1,5 @@
-function scr_carregar_sprites(){
-	switch (global.player) {
+function scr_carregar_sprites(player){
+	switch (player) {
 		case "blue":
 			imagem[0] = spr_blue
 			imagem[1] = spr_blue_parado_baixo
