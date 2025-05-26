@@ -10,43 +10,10 @@ draw_set_font(fnt_01);						//definir a fonte
 	if instance_exists(obj_oponente) {
 		draw_text(200, 20, "jogadores: " + string(instance_number(obj_oponente) + 1))	//desenhar o texto
 		draw_text(120, 40, "Iniciar: " + string(tempo))
-		if tempo == 0 {
-			switch (x) {
-				case 144:
-					switch (y) {
-						case 128:
-							global.player = "blue"
-							break
-						case 160:
-							global.player = "pink"
-							break
-					}
-					break
-				case 176:
-					switch (y) {
-						case 128:
-							global.player = "green"
-							break
-						case 160:
-							global.player = "purple"
-							break
-					}
-					break
-				case 208:
-					switch (y) {
-						case 128:
-							global.player = "orange"
-							break
-						case 160:
-							global.player = "red"
-							break
-					}
-					break
-			}
-
-			room_goto(r_fase_01)
+		if (tempo == 0 && global.lider) {
+			scr_enviar("iniciar_partida")	//envia para os jogadores
+			scr_escolher_jogador(x, y)		//definir o personagem
 		}
-		
 		if tempo > 0 tempo --
 	} 
 	

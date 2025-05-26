@@ -78,6 +78,7 @@
     {"id":{"name":"scr_alinhar_na_grade","path":"scripts/scr_alinhar_na_grade/scr_alinhar_na_grade.yy",},},
     {"id":{"name":"scr_carregar_sprites","path":"scripts/scr_carregar_sprites/scr_carregar_sprites.yy",},},
     {"id":{"name":"scr_enviar","path":"scripts/scr_enviar/scr_enviar.yy",},},
+    {"id":{"name":"scr_escolher_jogador","path":"scripts/scr_escolher_jogador/scr_escolher_jogador.yy",},},
     {"id":{"name":"scr_explosao","path":"scripts/scr_explosao/scr_explosao.yy",},},
     {"id":{"name":"scr_jogador_morrendo","path":"scripts/scr_jogador_morrendo/scr_jogador_morrendo.yy",},},
     {"id":{"name":"scr_posicionar_jogador","path":"scripts/scr_posicionar_jogador/scr_posicionar_jogador.yy",},},

@@ -34,14 +34,12 @@ switch(async_load[?"type"]) {
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
 				
 				//cronometrar inicio da partida
-				if !(global.lider) obj_player_select.tempo = 300			
-				else obj_player_select.tempo = 310	//se for o lider
-				
+				obj_player_select.tempo = 300			
+								
 				break
 			case "Oponente criado!":
 				//cronometrar inicio da partida
-				if !(global.lider) obj_player_select.tempo = 300		
-				else obj_player_select.tempo = 310	//se for o lider
+				obj_player_select.tempo = 300
 				
 				if (global.jogadores[(real_data[? "jogador"])] == noone) {	//verifica se o oponente já foi criado
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
@@ -51,6 +49,8 @@ switch(async_load[?"type"]) {
 					}
 				}				
 				break
+			case "Iniciar partida!":
+				scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
