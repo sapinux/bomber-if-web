@@ -11,6 +11,7 @@ switch(async_load[?"type"]) {
 		var buffer_processed = buffer_read(buffer_raw, buffer_text)
 		var real_data = json_decode(buffer_processed)
 		var event_name = real_data[? "event_name"]
+		
 		show_debug_message("O server nos enviou: " + buffer_processed)	//depuração
 		
 		var bomba
@@ -62,7 +63,7 @@ switch(async_load[?"type"]) {
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
-				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[4]
+				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[0]
 				break
 			
 			case "Create bomba!":
@@ -117,6 +118,9 @@ switch(async_load[?"type"]) {
 						instance_create_layer(real_data[? "x"], real_data[? "y"], "Bonus", obj_bonus_luva)
 						break
 				}
+				break
+			case "Oponente saiu!":
+				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				break
 		}
 		break
