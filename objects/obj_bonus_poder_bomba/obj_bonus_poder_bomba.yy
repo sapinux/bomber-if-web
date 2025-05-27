@@ -36,5 +36,5 @@
     "path":"sprites/spr_bonus_poder_bomba/spr_bonus_poder_bomba.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

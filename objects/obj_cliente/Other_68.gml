@@ -21,7 +21,10 @@ switch(async_load[?"type"]) {
 			case "Você foi criado!":
 				global.cliente_id = (real_data[? "id"])
 				global.sala = (real_data[? "sala"])
-				if global.cliente_id == 1 global.lider = true //se for o primeiro da sala, assumira a lideranca
+				if global.cliente_id == 1 {
+					global.lider = true		//se for o primeiro da sala, assumira a lideranca
+					scr_enviar("lider");	//notifica o server a liderança
+				}
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
 				break
 			case "Jogador na sala!":
@@ -121,6 +124,10 @@ switch(async_load[?"type"]) {
 				break
 			case "Oponente saiu!":
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
+				break
+			case "Novo lider!":
+				global.lider = true		//assume a liderança
+				scr_enviar("lider");	//notifica o server a liderança
 				break
 		}
 		break

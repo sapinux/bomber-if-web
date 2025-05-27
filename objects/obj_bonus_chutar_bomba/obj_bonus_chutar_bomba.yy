@@ -39,5 +39,5 @@
     "name":"spr_parede",
     "path":"sprites/spr_parede/spr_parede.yy",
   },
-  "visible":false,
+  "visible":true,
 }
