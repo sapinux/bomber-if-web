@@ -26,6 +26,7 @@ switch(async_load[?"type"]) {
 					scr_enviar("lider");	//notifica o server a liderança
 				}
 				global.jogadores[(real_data[? "id"])] = global.cliente_id	//
+				controle_jogadores[(real_data[? "id"])] = global.cliente_id	//atribui no vetor o numero do jogador
 				
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//-----depuração
 				break
@@ -45,11 +46,7 @@ switch(async_load[?"type"]) {
 								
 				break
 			case "Oponente criado!":
-								
-				//verifica se o oponente já foi criado
-				//if (global.jogadores[(real_data[? "jogador"])] == noone) {
-								
-				
+										
 				if !(array_contains(controle_jogadores, (real_data[? "jogador"]))) {
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 					with (oponente) {
@@ -138,6 +135,8 @@ switch(async_load[?"type"]) {
 			
 			case "Oponente saiu!":
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
+				global.jogadores[(real_data[? "jogador"])] = 0					//atribui 0 para o vetor do jogador que saiu
+				controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				break
 			
 			case "Novo lider!":
