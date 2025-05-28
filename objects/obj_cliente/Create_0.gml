@@ -7,6 +7,4 @@ global.porta = 3000													//porta utilizada no server
 global.lider = false												//define se é lider da sala
 global.jogadores = []												//vetor para armazenar o id do oponente
 network_connect_raw_async(global.socket, global.ip, global.porta)	//conexao com o server
-
-//for (i = 0;i < 11; i ++) global.jogadores[i] = noone				//guardará os id dos oponentes
-controle_jogadores = []												//controlar jogadores 
+global.controle_jogadores = []												//controlar jogadores 

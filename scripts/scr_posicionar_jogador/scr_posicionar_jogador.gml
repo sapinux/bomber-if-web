@@ -1,6 +1,12 @@
 function scr_posicionar_jogador(player, player_id) {
+	posicao = 0
+	for (i = 1; i == player_id; i ++) {
+		if global.controle_jogadores[i] != 0 posicao ++
+		
+	}
+	
 	with (player) {
-		switch (player_id) {
+		switch (posicao) {
 			case 1:
 				x = 48
 				y = 32

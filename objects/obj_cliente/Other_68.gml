@@ -25,8 +25,8 @@ switch(async_load[?"type"]) {
 					global.lider = true		//se for o primeiro da sala, assumira a lideranca
 					scr_enviar("lider");	//notifica o server a liderança
 				}
-				global.jogadores[(real_data[? "id"])] = global.cliente_id	//
-				controle_jogadores[(real_data[? "id"])] = global.cliente_id	//atribui no vetor o numero do jogador
+				global.jogadores[(real_data[? "id"])] = global.cliente_id	//atribui no vetor o numero do jogador
+				global.controle_jogadores[(real_data[? "id"])] = global.cliente_id	//atribui no vetor o numero do jogador
 				
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//-----depuração
 				break
@@ -38,7 +38,7 @@ switch(async_load[?"type"]) {
 					global.jogadores[(real_data[? "jogador"])] = id
 					scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
-				controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
+				global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
 				
 				//cronometrar inicio da partida
@@ -47,13 +47,13 @@ switch(async_load[?"type"]) {
 				break
 			case "Oponente criado!":
 										
-				if !(array_contains(controle_jogadores, (real_data[? "jogador"]))) {
+				if !(array_contains(global.controle_jogadores, (real_data[? "jogador"]))) {
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 					with (oponente) {
 						global.jogadores[(real_data[? "jogador"])] = id
 						scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 					}
-					controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
+					global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
 				}
 				
 				//cronometrar inicio da partida
@@ -136,7 +136,7 @@ switch(async_load[?"type"]) {
 			case "Oponente saiu!":
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				global.jogadores[(real_data[? "jogador"])] = 0					//atribui 0 para o vetor do jogador que saiu
-				controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
+				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				break
 			
 			case "Novo lider!":
