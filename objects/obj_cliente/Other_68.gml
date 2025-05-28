@@ -12,7 +12,7 @@ switch(async_load[?"type"]) {
 		var real_data = json_decode(buffer_processed)
 		var event_name = real_data[? "event_name"]
 		
-		show_debug_message("O server nos enviou: " + buffer_processed)	//depuração
+		show_debug_message("O server nos enviou: " + buffer_processed)	//-------------------depuração
 		
 		var bomba
 		var oponente
@@ -25,16 +25,19 @@ switch(async_load[?"type"]) {
 					global.lider = true		//se for o primeiro da sala, assumira a lideranca
 					scr_enviar("lider");	//notifica o server a liderança
 				}
-				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//depuração
+				global.jogadores[(real_data[? "id"])] = global.cliente_id	//
+				
+				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//-----depuração
 				break
 			case "Jogador na sala!":
+				
 				//cria um oponente para representar o jogador que entrou na sala
 				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 				with (oponente) {
 					global.jogadores[(real_data[? "jogador"])] = id
 					scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
-				
+				controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
 				
 				//cronometrar inicio da partida
@@ -42,27 +45,35 @@ switch(async_load[?"type"]) {
 								
 				break
 			case "Oponente criado!":
-				//cronometrar inicio da partida
-				obj_player_select.tempo = 300
+								
+				//verifica se o oponente já foi criado
+				//if (global.jogadores[(real_data[? "jogador"])] == noone) {
+								
 				
-				if (global.jogadores[(real_data[? "jogador"])] == noone) {	//verifica se o oponente já foi criado
+				if !(array_contains(controle_jogadores, (real_data[? "jogador"]))) {
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 					with (oponente) {
 						global.jogadores[(real_data[? "jogador"])] = id
 						scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 					}
-				}				
+					controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
+				}
+				
+				//cronometrar inicio da partida
+				obj_player_select.tempo = 300
+				
 				break
-			
+						
 			case "Iniciar partida!":
 				scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
 				
 				break
+			
 			case "Jogador escolhido!":
-				//global.jogadores[(real_data[? "jogador"])].cor = real_data[? "item"]	//definir o personagem ---------PAREI AQUI
 				scr_carregar_sprites(global.jogadores[(real_data[? "jogador"])], real_data[? "item"])
 				show_debug_message(real_data[? "item"]	)
 				break
+			
 			case "Position update!":
 				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
 				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
@@ -86,6 +97,7 @@ switch(async_load[?"type"]) {
 				}
 				
 				break
+			
 			case "Lancar bomba!":
 				if (real_data[? "item"]) == "bomba"
 					bomba = instance_create_layer(global.jogadores[(real_data[? "jogador"])].x, global.jogadores[(real_data[? "jogador"])].y, "Action", obj_bomba_pulando)	//criar bomba pulando
@@ -106,6 +118,7 @@ switch(async_load[?"type"]) {
 						}
 					}
 				break
+			
 			case "Create bonus!":
 				switch (real_data[? "item"]) {
 					case "bomba":
@@ -122,13 +135,16 @@ switch(async_load[?"type"]) {
 						break
 				}
 				break
+			
 			case "Oponente saiu!":
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				break
+			
 			case "Novo lider!":
 				global.lider = true		//assume a liderança
 				scr_enviar("lider");	//notifica o server a liderança
 				break
+		
 		}
 		break
 }
