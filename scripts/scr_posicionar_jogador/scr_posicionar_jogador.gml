@@ -1,6 +1,7 @@
 function scr_posicionar_jogador(player, player_id) {
-	posicao = 0
-	for (i = 1; i == player_id; i ++) {
+	var posicao = 0
+	//verifica a ordem do jogador em relação aos demais
+	for (i = 1; i <= player_id; i ++) {
 		if global.controle_jogadores[i] != 0 posicao ++
 		
 	}

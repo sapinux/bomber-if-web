@@ -3,7 +3,7 @@ if vivo {
 	sprite_index = imagem[2]
 	//cima
 	if !place_meeting(x , y - vel, obj_planta)		//se não houver planta
-		if (place_free(x, y - vel)) || (place_meeting(x, y - vel, obj_explosao)) {
+		if (place_free(x, y - vel)) || (place_meeting(x, y - vel, obj_explosao) || (place_meeting(x, y - vel, obj_oponente))) {
 			y -= vel
 			sprite_index = imagem[6]	//carregar sprite
 			scr_enviar("position_update", "y", y)

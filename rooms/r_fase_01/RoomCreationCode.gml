@@ -68,4 +68,5 @@ if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
 if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
 if instance_exists(obj_bonus_poder_bomba) obj_bonus_poder_bomba.visible = true
 
-scr_posicionar_jogador(obj_player, global.cliente_id)	//posicionar jogador na arena
+scr_posicionar_jogador(obj_player, global.cliente_id)				//posicionar jogador na arena
+scr_enviar("position_update", "x", obj_player.x ,"y", obj_player.y)	//envia para o server sua posicao
