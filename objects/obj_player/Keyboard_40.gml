@@ -3,7 +3,8 @@ if vivo {
 	sprite_index = imagem[1]
 	//cima
 	if !place_meeting(x , y + vel, obj_planta)		//se não houver planta	
-		if (place_free(x , y + vel)) || (place_meeting(x, y + vel, obj_explosao)) || (place_meeting(x, y + vel, obj_oponente)) || (place_meeting(x, y + vel, obj_bonus)) {
+		if (place_free(x , y + vel)) || (place_meeting(x, y + vel, obj_explosao)) || (place_meeting(x, y + vel, obj_oponente)) 
+			|| (place_meeting(x, y + vel, obj_bonus_bomba)) {
 			y += vel
 			sprite_index = imagem[5]	//carregar sprite
 			scr_enviar("position_update", "y", y, "s", 5)	//enviar posicao p o server

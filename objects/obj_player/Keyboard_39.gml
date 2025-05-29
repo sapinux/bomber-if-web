@@ -4,7 +4,8 @@ if vivo {
 	
 	//direita
 	if !place_meeting(x + vel, y, obj_planta)		//se não houver planta	
-		if (place_free(x + vel , y)) || (place_meeting(x + vel, y, obj_explosao)) || (place_meeting(x + vel, y, obj_oponente)) || (place_meeting(x + vel, y, obj_bonus)){
+		if (place_free(x + vel , y)) || (place_meeting(x + vel, y, obj_explosao)) || (place_meeting(x + vel, y, obj_oponente)) 
+			|| (place_meeting(x + vel, y, obj_bonus_bomba)){
 			x += vel
 			sprite_index = imagem[7]	//carregar sprite
 			scr_enviar("position_update", "x", x, "s", 7)	//enviar posicao p o server

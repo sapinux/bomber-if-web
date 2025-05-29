@@ -35,7 +35,6 @@
     {"name":"obj_bonus_chutar_bomba","order":2,"path":"objects/obj_bonus_chutar_bomba/obj_bonus_chutar_bomba.yy",},
     {"name":"obj_bonus_luva","order":3,"path":"objects/obj_bonus_luva/obj_bonus_luva.yy",},
     {"name":"obj_bonus_poder_bomba","order":1,"path":"objects/obj_bonus_poder_bomba/obj_bonus_poder_bomba.yy",},
-    {"name":"obj_bonus","order":4,"path":"objects/obj_bonus/obj_bonus.yy",},
     {"name":"obj_cliente","order":7,"path":"objects/obj_cliente/obj_cliente.yy",},
     {"name":"obj_controler","order":3,"path":"objects/obj_controler/obj_controler.yy",},
     {"name":"obj_explosao","order":1,"path":"objects/obj_explosao/obj_explosao.yy",},

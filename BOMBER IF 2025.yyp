@@ -59,7 +59,6 @@
     {"id":{"name":"obj_bonus_chutar_bomba","path":"objects/obj_bonus_chutar_bomba/obj_bonus_chutar_bomba.yy",},},
     {"id":{"name":"obj_bonus_luva","path":"objects/obj_bonus_luva/obj_bonus_luva.yy",},},
     {"id":{"name":"obj_bonus_poder_bomba","path":"objects/obj_bonus_poder_bomba/obj_bonus_poder_bomba.yy",},},
-    {"id":{"name":"obj_bonus","path":"objects/obj_bonus/obj_bonus.yy",},},
     {"id":{"name":"obj_cliente","path":"objects/obj_cliente/obj_cliente.yy",},},
     {"id":{"name":"obj_configuracoes","path":"objects/obj_configuracoes/obj_configuracoes.yy",},},
     {"id":{"name":"obj_controler","path":"objects/obj_controler/obj_controler.yy",},},

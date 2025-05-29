@@ -13,10 +13,7 @@
     "name":"Bonus",
     "path":"folders/Objects/Bonus.yy",
   },
-  "parentObjectId":{
-    "name":"obj_bonus",
-    "path":"objects/obj_bonus/obj_bonus.yy",
-  },
+  "parentObjectId":null,
   "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
