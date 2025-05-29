@@ -37,7 +37,6 @@ switch(async_load[?"type"]) {
 				with (oponente) {
 					global.jogadores[(real_data[? "jogador"])] = id
 					global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
-					//scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 				}
 				
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
@@ -53,7 +52,6 @@ switch(async_load[?"type"]) {
 					with (oponente) {
 						global.jogadores[(real_data[? "jogador"])] = id
 						global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
-						//scr_posicionar_jogador(oponente, (real_data[? "jogador"]))
 					}
 					
 				}
@@ -74,9 +72,9 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Position update!":
-				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])
-				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])
-				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[0]
+				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])		//recebe o x do server
+				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])		//recebe o y do server
+				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[(real_data[? "s"])]	//recebe o sprite do server
 				break
 			
 			case "Create bomba!":

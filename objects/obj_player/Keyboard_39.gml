@@ -7,18 +7,18 @@ if vivo {
 		if (place_free(x + vel , y)) || (place_meeting(x + vel, y, obj_explosao)) || (place_meeting(x + vel, y, obj_oponente)) {
 			x += vel
 			sprite_index = imagem[7]	//carregar sprite
-			scr_enviar("position_update", "x", x)
+			scr_enviar("position_update", "x", x, "s", 7)
 		}
 	   
    //deslizar na quina da parede
 	if (keyboard_check(vk_up)==false) && (keyboard_check(vk_down)==false) && (place_meeting(x + vel, y, obj_parede)) {
 		if (y - (floor(y / global.largura) * global.largura) <= 10) && (frac(floor(y / global.altura) / 2) == 0) {
 			y -= vel
-			scr_enviar("position_update", "y", y)
+			scr_enviar("position_update", "y", y, "s", 6)
 		}
 		if (y - (floor(y / global.largura) * global.largura) >= 05) && (frac(floor(y / global.largura) / 2) != 0) {
 			y += vel
-			scr_enviar("position_update", "y", y)
+			scr_enviar("position_update", "y", y, "s", 5)
 		}
 	}
 
