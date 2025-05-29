@@ -1,1 +1,1 @@
-instance_destroy()
+if other.visible instance_destroy()

@@ -2,7 +2,7 @@ if vivo {
 	
 	if !(place_meeting(x ,y ,obj_bomba)) && (bombas > 0) {	
 		
-		scr_enviar("create_bomba", "item", "bomba", "poder_bomba", poder_bomba)
+		scr_enviar("create_bomba", "item", "bomba", "poder_bomba", poder_bomba)	//enviar bomba p o server
 		
 		var bomba = instance_create_layer(x, y, "Action", obj_bomba)	//criar bomba
 		with (bomba) {

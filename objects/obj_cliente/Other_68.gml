@@ -133,6 +133,10 @@ switch(async_load[?"type"]) {
 				}
 				break
 			
+			case "Morreu!":
+				global.jogadores[(real_data[? "jogador"])].visible = false
+				break
+			
 			case "Oponente saiu!":
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				global.jogadores[(real_data[? "jogador"])] = 0						//atribui 0 para o vetor do jogador que saiu
