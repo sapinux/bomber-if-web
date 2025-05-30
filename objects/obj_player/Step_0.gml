@@ -10,4 +10,5 @@ if (sprite_index == imagem[9]) && (image_index>=4) && (visible) {
 if (place_meeting(x, y, obj_explosao)) && vivo	{									
 	scr_enviar("morte")		//envia p o server que morreu
 	script_execute(scr_jogador_morrendo)	//aciona o sprite de morte
+	obj_cliente.alarm[0] = 60
 }

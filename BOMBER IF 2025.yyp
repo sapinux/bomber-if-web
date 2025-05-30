@@ -74,6 +74,7 @@
     {"id":{"name":"r_fase_01","path":"rooms/r_fase_01/r_fase_01.yy",},},
     {"id":{"name":"rm_01","path":"rooms/rm_01/rm_01.yy",},},
     {"id":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
+    {"id":{"name":"rm_placar","path":"rooms/rm_placar/rm_placar.yy",},},
     {"id":{"name":"rm_player_select","path":"rooms/rm_player_select/rm_player_select.yy",},},
     {"id":{"name":"scr_alinhar_na_grade","path":"scripts/scr_alinhar_na_grade/scr_alinhar_na_grade.yy",},},
     {"id":{"name":"scr_carregar_sprites","path":"scripts/scr_carregar_sprites/scr_carregar_sprites.yy",},},
@@ -83,6 +84,7 @@
     {"id":{"name":"scr_jogador_morrendo","path":"scripts/scr_jogador_morrendo/scr_jogador_morrendo.yy",},},
     {"id":{"name":"scr_neutralizar_jogador","path":"scripts/scr_neutralizar_jogador/scr_neutralizar_jogador.yy",},},
     {"id":{"name":"scr_posicionar_jogador","path":"scripts/scr_posicionar_jogador/scr_posicionar_jogador.yy",},},
+    {"id":{"name":"scr_verificar_mortes","path":"scripts/scr_verificar_mortes/scr_verificar_mortes.yy",},},
     {"id":{"name":"scr_verificar","path":"scripts/scr_verificar/scr_verificar.yy",},},
     {"id":{"name":"spr_blue_andando_baixo","path":"sprites/spr_blue_andando_baixo/spr_blue_andando_baixo.yy",},},
     {"id":{"name":"spr_blue_andando_cima","path":"sprites/spr_blue_andando_cima/spr_blue_andando_cima.yy",},},
@@ -164,6 +166,7 @@
     {"roomId":{"name":"r_fase_01","path":"rooms/r_fase_01/r_fase_01.yy",},},
     {"roomId":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
     {"roomId":{"name":"rm_player_select","path":"rooms/rm_player_select/rm_player_select.yy",},},
+    {"roomId":{"name":"rm_placar","path":"rooms/rm_placar/rm_placar.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

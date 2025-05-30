@@ -136,19 +136,21 @@ switch(async_load[?"type"]) {
 			case "Morreu!":
 				global.jogadores[(real_data[? "jogador"])].vivo = false
 				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
+				global.oponentes_mortos ++	//conta a morte do oponente
+				obj_cliente.alarm[0] = 60
 				break
 			
 			case "Oponente saiu!":
+				if  !(global.jogadores[(real_data[? "jogador"])].vivo) global.oponentes_mortos --	//equilibra o contador de morte do oponente
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				global.jogadores[(real_data[? "jogador"])] = 0						//atribui 0 para o vetor do jogador que saiu
 				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				break
 			
 			case "Novo lider!":
-				global.lider = true		//assume a liderança
-				scr_enviar("lider");	//notifica o server a liderança
+				global.lider = true			//assume a liderança
+				scr_enviar("lider");		//notifica o server a liderança
 				break
-		
 		}
 		break
 }
