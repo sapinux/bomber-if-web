@@ -1,7 +1,7 @@
 window_set_caption("id: " + string(global.cliente_id) + " sala: " + string(global.sala) + " op: " + string(instance_number(obj_oponente)) + " jogador : " + string(global.controle_jogadores[global.cliente_id]))
 //quando concluir a animacao de morte
 if (sprite_index == imagem[9]) && (image_index>=4) && (visible) {
-	scr_neutralizar_jogador()
+	scr_jogador_fantasma()
 	visible = false
 	alarm[0] = 90		//tempo para voltar como fantasma
 	//instance_destroy()
