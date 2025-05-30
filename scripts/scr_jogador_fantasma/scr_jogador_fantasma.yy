@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_neutralizar_jogador",
+  "%Name":"scr_jogador_fantasma",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_neutralizar_jogador",
+  "name":"scr_jogador_fantasma",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

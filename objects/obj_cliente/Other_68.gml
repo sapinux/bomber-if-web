@@ -62,8 +62,9 @@ switch(async_load[?"type"]) {
 				break
 						
 			case "Iniciar partida!":
-				scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
-				
+				global.oponentes_mortos = 0											//contar oponentes mortos na partida
+				if instance_exists(obj_player_select) scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
+				else room_goto(r_fase_01)
 				break
 			
 			case "Jogador escolhido!":
