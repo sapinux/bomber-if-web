@@ -134,7 +134,8 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Morreu!":
-				global.jogadores[(real_data[? "jogador"])].visible = false
+				global.jogadores[(real_data[? "jogador"])].vivo = false
+				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
 				break
 			
 			case "Oponente saiu!":
