@@ -151,6 +151,11 @@ switch(async_load[?"type"]) {
 				global.lider = true			//assume a liderança
 				scr_enviar("lider");		//notifica o server a liderança
 				break
+				
+			case "Placar!":
+				room_goto(rm_placar)
+				break
+				
 		}
 		break
 }
