@@ -69,7 +69,7 @@ switch(async_load[?"type"]) {
 			
 			case "Jogador escolhido!":
 				scr_carregar_sprites(global.jogadores[(real_data[? "jogador"])], real_data[? "item"])
-				show_debug_message(real_data[? "item"]	)
+				show_debug_message(real_data[? "item"])
 				break
 			
 			case "Position update!":
@@ -138,7 +138,7 @@ switch(async_load[?"type"]) {
 				global.jogadores[(real_data[? "jogador"])].vivo = false
 				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
 				global.oponentes_mortos ++	//conta a morte do oponente
-				obj_cliente.alarm[0] = 60
+				if global.lider obj_cliente.alarm[0] = 60
 				break
 			
 			case "Oponente saiu!":
