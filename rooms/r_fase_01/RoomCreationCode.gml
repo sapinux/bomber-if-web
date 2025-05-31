@@ -1,6 +1,5 @@
 scr_limpar_bonus()				//realizar lipeza dos bonus
-global.jogadores_mortos = 0		//zera o contador de mortos
-obj_oponente.vivo = true		//torna todos oponentes vivos
+
 
 if global.lider {
 		
@@ -66,7 +65,24 @@ if global.lider {
 	}
 	until (cont == 2)										//quantidade de icones de chutar bomba
 }
-if instance_exists(obj_oponente) obj_oponente.visible = true
+
+global.jogadores_mortos = 0		//zera o contador de mortos
+
+if instance_exists(obj_player) {
+	obj_player.vel = global.player_velocidade;				//velocidade em pixels
+	obj_player.bombas = global.bombas						//quantidade  de bombas
+	obj_player.poder_bomba = global.poder_bomba				//alcance da explosao
+	obj_player.vivo = true									//situacao de vida
+	obj_player.image_alpha = 1								//recupera a opacidade
+	obj_player.chutar_bomba = global.chutar_bomba			//poder para chutar a bomba
+	obj_player.luva = global.luva							//poder para lancar a bomba
+	obj_player.direcao = "baixo"							//direcao padrao do player
+}
+
+if instance_exists(obj_oponente) {
+	obj_oponente.vivo = true		//torna todos oponentes vivos
+	obj_oponente.visible = true		//torna visivel
+}
 if instance_exists(obj_bonus_bomba) obj_bonus_bomba.visible = true
 if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
 if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
