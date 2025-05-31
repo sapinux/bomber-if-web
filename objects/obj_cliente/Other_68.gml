@@ -42,10 +42,11 @@ switch(async_load[?"type"]) {
 				
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
 				
-				//cronometrar inicio da partida
-				obj_player_select.tempo = 300			
+				//cronometrar inicio da partida após jogador entrar na sala
+				obj_player_select.tempo = 300		//10 segundos		
 								
 				break
+				
 			case "Oponente criado!":
 										
 				if !(array_contains(global.controle_jogadores, (real_data[? "jogador"]))) {
@@ -57,26 +58,29 @@ switch(async_load[?"type"]) {
 					
 				}
 				
-				//cronometrar inicio da partida
-				obj_player_select.tempo = 300
+				//cronometrar inicio da partida	após jogador entrar na sala
+				obj_player_select.tempo = 300		//10 segundos
 				
 				break
 						
 			case "Iniciar partida!":
-				global.oponentes_mortos = 0											//contar oponentes mortos na partida
+				//se estiver na tela de selecao de personagem
 				if instance_exists(obj_player_select) scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
+				//caso contrario carrega a fase de batalha
 				else room_goto(r_fase_01)
 				break
 			
 			case "Jogador escolhido!":
-				scr_carregar_sprites(global.jogadores[(real_data[? "jogador"])], real_data[? "item"])
-				show_debug_message(real_data[? "item"])
+				scr_carregar_sprites(global.jogadores[(real_data[? "jogador"])], real_data[? "item"])	//carrega sprites dos oponentes
+				show_debug_message(real_data[? "item"])													//---------depuracao
 				break
 			
 			case "Position update!":
-				if (real_data[? "x"]) global.jogadores[(real_data[? "jogador"])].x = (real_data[? "x"])		//recebe o x do server
-				if (real_data[? "y"]) global.jogadores[(real_data[? "jogador"])].y = (real_data[? "y"])		//recebe o y do server
-				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[(real_data[? "s"])]	//recebe o sprite do server
+				with (global.jogadores[(real_data[? "jogador"])]) {
+					if (real_data[? "x"]) x = (real_data[? "x"])		//recebe o x do server
+					if (real_data[? "y"]) y = (real_data[? "y"])		//recebe o y do server
+					sprite_index =imagem[(real_data[? "s"])]			//recebe o sprite do server
+				}
 				break
 			
 			case "Create bomba!":
@@ -164,11 +168,11 @@ switch(async_load[?"type"]) {
 				break
 				
 			case "Placar!":
-				room_goto(rm_placar)
+				room_goto(rm_placar)		//carrega tela de placar
 				break 
 				
 			case "Empate!":
-				room_goto(rm_empate)
+				room_goto(rm_empate)		//carrega tela de empate
 				break
 				
 		}
