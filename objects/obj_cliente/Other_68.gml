@@ -19,14 +19,14 @@ switch(async_load[?"type"]) {
 		
 		switch (event_name) {
 			case "Você foi criado!":
-				global.cliente_id = (real_data[? "id"])
+				global.cliente_id = (real_data[? "jogador"])
 				global.sala = (real_data[? "sala"])
 				if global.cliente_id == 1 {
 					global.lider = true		//se for o primeiro da sala, assumira a lideranca
 					scr_enviar("lider");	//notifica o server a liderança
 				}
-				global.jogadores[(real_data[? "id"])] = global.cliente_id			//atribui no vetor o numero do jogador
-				global.controle_jogadores[(real_data[? "id"])] = global.cliente_id	//atribui no vetor o numero do jogador
+				global.jogadores[(real_data[? "jogador"])] = global.cliente_id			//atribui no vetor o numero do jogador
+				global.controle_jogadores[(real_data[? "jogador"])] = global.cliente_id	//atribui no vetor o numero do jogador
 				
 				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//-----depuração
 				break
@@ -35,8 +35,8 @@ switch(async_load[?"type"]) {
 				//cria um oponente para representar o jogador que entrou na sala
 				oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 				with (oponente) {
-					global.jogadores[(real_data[? "jogador"])] = id
-					global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
+					global.jogadores[(real_data[? "jogador"])] = id										//armazena id
+					global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])		//atribui no vetor o numero do jogador
 				}
 				
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
@@ -50,7 +50,7 @@ switch(async_load[?"type"]) {
 				if !(array_contains(global.controle_jogadores, (real_data[? "jogador"]))) {
 					oponente = instance_create_layer(0, 0, "Players", obj_oponente)
 					with (oponente) {
-						global.jogadores[(real_data[? "jogador"])] = id
+						global.jogadores[(real_data[? "jogador"])] = id									//armazena id
 						global.controle_jogadores[(real_data[? "jogador"])] = (real_data[? "jogador"])	//atribui no vetor o numero do jogador
 					}
 					
@@ -137,16 +137,22 @@ switch(async_load[?"type"]) {
 			case "Morreu!":
 				with (global.jogadores[(real_data[? "jogador"])]) {
 					vivo = false
-					sprite_index = imagem[9]
+					sprite_index = imagem[9]				//carrega sprite de morte
 				}
-				//global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
-				global.oponentes_mortos ++	//conta a morte do oponente
-				if global.lider obj_cliente.alarm[0] = 60
+				
+				global.jogadores_mortos ++			//conta a morte do oponente
+				if global.lider obj_cliente.alarm[0] = 30	//se for lider tempo para verificar jogadores mortos
 				break
 			
 			case "Oponente saiu!":
-				if  (global.jogadores[(real_data[? "jogador"])].vivo == false) global.oponentes_mortos --	//equilibra o contador de morte do oponente
-				instance_destroy(global.jogadores[(real_data[? "jogador"])])
+				
+				with (global.jogadores[(real_data[? "jogador"])]) {
+					if vivo == false								//se o morto saiu
+						global.jogadores_mortos --				//equilibra o contador de morte do oponente
+					instance_destroy()						//destroi o obj_oponente
+				}
+								
+				//instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				global.jogadores[(real_data[? "jogador"])] = 0						//atribui 0 para o vetor do jogador que saiu
 				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				break

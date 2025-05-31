@@ -1,4 +1,4 @@
-window_set_caption("id: " + string(global.cliente_id) + " op mortos " + string(global.oponentes_mortos) + " op: " + string(instance_number(obj_oponente)) + " vivo : " + string(visible) + " image : " + string(image_alpha))
+window_set_caption("id: " + string(global.cliente_id) + " mortos " + string(global.jogadores_mortos) + " op: " + string(instance_number(obj_oponente)) + " vivo : " + string(visible) + " image : " + string(image_alpha))
 //quando concluir a animacao de morte
 
 if (sprite_index == imagem[9]) && (image_index>=4) && (visible) {
@@ -10,7 +10,10 @@ if (sprite_index == imagem[9]) && (image_index>=4) && (visible) {
 
 //se a explosao atingir o player
 if (place_meeting(x, y, obj_explosao)) && vivo	{									
-	if image_alpha == 1 scr_enviar("morte")		//envia p o server que morreu
+	if image_alpha == 1 {
+		scr_enviar("morte")			//se estiver vivo envia p o server que morreu
+		global.jogadores_mortos ++	//conta a morte do oponente
+	}
 	script_execute(scr_jogador_morrendo)		//aciona o sprite de morte
-	if global.lider obj_cliente.alarm[0] = 30	//tempo para verificar jogadores mortos
+	if global.lider obj_cliente.alarm[0] = 30	//se for lider inicia alarm para verificar jogadores mortos (1 segundo)
 }

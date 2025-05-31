@@ -1,4 +1,5 @@
-scr_limpar_bonus()	//realizar lipeza dos bonus
+scr_limpar_bonus()				//realizar lipeza dos bonus
+global.jogadores_mortos = 0		//zera o contador de mortos
 
 if global.lider {
 		

@@ -1,1 +1,1 @@
-scr_verificar_mortes()
+scr_verificar_mortes()	
