@@ -55,7 +55,6 @@
     {"name":"scr_limpar_bonus","order":10,"path":"scripts/scr_limpar_bonus/scr_limpar_bonus.yy",},
     {"name":"scr_posicionar_jogador","order":6,"path":"scripts/scr_posicionar_jogador/scr_posicionar_jogador.yy",},
     {"name":"scr_verificar_mortes","order":9,"path":"scripts/scr_verificar_mortes/scr_verificar_mortes.yy",},
-    {"name":"scr_verificar","order":2,"path":"scripts/scr_verificar/scr_verificar.yy",},
     {"name":"spr_blue_andando_baixo","order":1,"path":"sprites/spr_blue_andando_baixo/spr_blue_andando_baixo.yy",},
     {"name":"spr_blue_andando_cima","order":2,"path":"sprites/spr_blue_andando_cima/spr_blue_andando_cima.yy",},
     {"name":"spr_blue_andando_dir","order":3,"path":"sprites/spr_blue_andando_dir/spr_blue_andando_dir.yy",},
