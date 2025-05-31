@@ -19,17 +19,18 @@ switch(async_load[?"type"]) {
 		
 		switch (event_name) {
 			case "Você foi criado!":
-				global.cliente_id = (real_data[? "jogador"])
-				global.sala = (real_data[? "sala"])
+				global.cliente_id = (real_data[? "jogador"])	//recebe o id definido pelo server
+				global.sala = (real_data[? "sala"])				//recebe a sala definida pelo server
 				if global.cliente_id == 1 {
 					global.lider = true		//se for o primeiro da sala, assumira a lideranca
-					scr_enviar("lider");	//notifica o server a liderança
+					scr_enviar("lider");	//notifica o server a sua liderança
 				}
-				global.jogadores[(real_data[? "jogador"])] = global.cliente_id			//atribui no vetor o numero do jogador
-				global.controle_jogadores[(real_data[? "jogador"])] = global.cliente_id	//atribui no vetor o numero do jogador
+				global.jogadores[(real_data[? "jogador"])] = global.cliente_id				//atribui ao vetor o numero do jogador
+				global.controle_jogadores[(real_data[? "jogador"])] = global.cliente_id		//atribui ao vetor o numero do jogador
 				
-				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//-----depuração
+				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//---------------------------depuração
 				break
+			
 			case "Jogador na sala!":
 				
 				//cria um oponente para representar o jogador que entrou na sala

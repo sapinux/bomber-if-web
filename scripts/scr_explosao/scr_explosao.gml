@@ -53,3 +53,4 @@ function scr_explosao(){
 		}
 	}
 }
+
