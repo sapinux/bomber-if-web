@@ -1,5 +1,6 @@
 scr_limpar_bonus()				//realizar lipeza dos bonus
 global.jogadores_mortos = 0		//zera o contador de mortos
+obj_oponente.vivo = true		//torna todos oponentes vivos
 
 if global.lider {
 		
@@ -71,5 +72,5 @@ if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
 if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
 if instance_exists(obj_bonus_poder_bomba) obj_bonus_poder_bomba.visible = true
 
-scr_posicionar_jogador(obj_player, global.cliente_id)				//posicionar jogador na arena
+scr_posicionar_jogador(obj_player, global.cliente_id)						//posicionar jogador na arena
 scr_enviar("position_update", "x", obj_player.x ,"y", obj_player.y, "s", 0)	//envia para o server sua posicao
