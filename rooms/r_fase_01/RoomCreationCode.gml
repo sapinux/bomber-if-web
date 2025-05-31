@@ -1,5 +1,7 @@
+scr_limpar_bonus()	//realizar lipeza dos bonus
+
 if global.lider {
-	
+		
 	//distribuir icones de bonus
 	randomize()												//evitar que o random repita os mesmos valores
 

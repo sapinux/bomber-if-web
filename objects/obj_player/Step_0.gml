@@ -12,5 +12,5 @@ if (sprite_index == imagem[9]) && (image_index>=4) && (visible) {
 if (place_meeting(x, y, obj_explosao)) && vivo	{									
 	if image_alpha == 1 scr_enviar("morte")		//envia p o server que morreu
 	script_execute(scr_jogador_morrendo)		//aciona o sprite de morte
-	if global.lider obj_cliente.alarm[0] = 60	//tempo para verificar jogadores mortos
+	if global.lider obj_cliente.alarm[0] = 30	//tempo para verificar jogadores mortos
 }

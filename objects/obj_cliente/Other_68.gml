@@ -135,14 +135,17 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Morreu!":
-				global.jogadores[(real_data[? "jogador"])].vivo = false
-				global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
+				with (global.jogadores[(real_data[? "jogador"])]) {
+					vivo = false
+					sprite_index = imagem[9]
+				}
+				//global.jogadores[(real_data[? "jogador"])].sprite_index = global.jogadores[(real_data[? "jogador"])].imagem[9]
 				global.oponentes_mortos ++	//conta a morte do oponente
 				if global.lider obj_cliente.alarm[0] = 60
 				break
 			
 			case "Oponente saiu!":
-				if  !(global.jogadores[(real_data[? "jogador"])].vivo) global.oponentes_mortos --	//equilibra o contador de morte do oponente
+				if  (global.jogadores[(real_data[? "jogador"])].vivo == false) global.oponentes_mortos --	//equilibra o contador de morte do oponente
 				instance_destroy(global.jogadores[(real_data[? "jogador"])])
 				global.jogadores[(real_data[? "jogador"])] = 0						//atribui 0 para o vetor do jogador que saiu
 				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
@@ -155,6 +158,10 @@ switch(async_load[?"type"]) {
 				
 			case "Placar!":
 				room_goto(rm_placar)
+				break 
+				
+			case "Empate!":
+				room_goto(rm_empate)
 				break
 				
 		}
