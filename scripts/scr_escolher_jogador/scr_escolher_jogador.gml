@@ -32,5 +32,6 @@ function scr_escolher_jogador(x, y) {
 			break
 		}
 		scr_enviar("jogador_escolhido", "item", global.player)			//envia para o server o sprite definido
+		
 		room_goto(r_fase_01)
 }

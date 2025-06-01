@@ -14,6 +14,7 @@ switch(async_load[?"type"]) {
 		
 		show_debug_message("O server nos enviou: " + buffer_processed)	//-------------------depuração
 		
+		var player
 		var bomba
 		var oponente
 		
@@ -25,10 +26,13 @@ switch(async_load[?"type"]) {
 					global.lider = true		//se for o primeiro da sala, assumira a lideranca
 					scr_enviar("lider");	//notifica o server a sua liderança
 				}
-				global.jogadores[(real_data[? "jogador"])] = global.cliente_id				//atribui ao vetor o numero do jogador
-				global.controle_jogadores[(real_data[? "jogador"])] = global.cliente_id		//atribui ao vetor o numero do jogador
+				player = instance_create_layer(0, 0, "Players", obj_player)
+				with (player) {
+					global.jogadores[(real_data[? "jogador"])] = id								//atribui ao vetor o numero do jogador
+					global.controle_jogadores[(real_data[? "jogador"])] = global.cliente_id		//atribui ao vetor o numero do jogador
+				}
 				
-				show_debug_message("ID definido pelo server: " + string(global.cliente_id))	//---------------------------depuração
+				show_debug_message("ID definido pelo server: " + string(global.cliente_id))		//---------------------------depuração
 				break
 			
 			case "Jogador na sala!":
@@ -79,7 +83,7 @@ switch(async_load[?"type"]) {
 				with (global.jogadores[(real_data[? "jogador"])]) {
 					if (real_data[? "x"]) x = (real_data[? "x"])		//recebe o x do server
 					if (real_data[? "y"]) y = (real_data[? "y"])		//recebe o y do server
-					sprite_index =imagem[(real_data[? "s"])]			//recebe o sprite do server
+					sprite_index = imagem[(real_data[? "s"])]			//recebe o sprite do server
 				}
 				break
 			

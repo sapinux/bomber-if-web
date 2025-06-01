@@ -1,5 +1,4 @@
 function scr_carregar_sprites(player, cor){
-	//witch (player) {
 		switch (cor) {
 			case "blue":
 				player.imagem[0] = spr_blue
@@ -74,5 +73,4 @@ function scr_carregar_sprites(player, cor){
 				player.imagem[9] = spr_purple_morrendo
 				break
 		}
-	//}
 }

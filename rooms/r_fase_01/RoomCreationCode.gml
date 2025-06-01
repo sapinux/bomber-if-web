@@ -69,20 +69,26 @@ if global.lider {
 global.jogadores_mortos = 0		//zera o contador de mortos
 
 if instance_exists(obj_player) {
-	obj_player.vel = global.player_velocidade;				//velocidade em pixels
-	obj_player.bombas = global.bombas						//quantidade  de bombas
-	obj_player.poder_bomba = global.poder_bomba				//alcance da explosao
-	obj_player.vivo = true									//situacao de vida
-	obj_player.image_alpha = 1								//recupera a opacidade
-	obj_player.chutar_bomba = global.chutar_bomba			//poder para chutar a bomba
-	obj_player.luva = global.luva							//poder para lancar a bomba
-	obj_player.direcao = "baixo"							//direcao padrao do player
+	with (global.jogadores[global.cliente_id]) {
+		vel = global.player_velocidade;				//velocidade em pixels
+		bombas = global.bombas						//quantidade  de bombas
+		poder_bomba = global.poder_bomba				//alcance da explosao
+		vivo = true									//situacao de vida
+		visible = true
+		image_alpha = 1								//recupera a opacidade
+		chutar_bomba = global.chutar_bomba			//poder para chutar a bomba
+		luva = global.luva							//poder para lancar a bomba
+		direcao = "baixo"							//direcao padrao do player
+		scr_carregar_sprites(id, global.player)		//carregar sprites no vetor
+		sprite_index = imagem[0]
+	}
 }
 
 if instance_exists(obj_oponente) {
 	obj_oponente.vivo = true		//torna todos oponentes vivos
 	obj_oponente.visible = true		//torna visivel
 }
+
 if instance_exists(obj_bonus_bomba) obj_bonus_bomba.visible = true
 if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
 if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
