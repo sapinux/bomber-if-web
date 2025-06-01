@@ -10,3 +10,4 @@ direcao = "baixo"							//direcao padrao do player
 global.id_pai = id							//player criador da bomba
 imagem = []									//vetor para alocar os sprites do player
 
+pontos = 0	//guardar pontuacao do player
