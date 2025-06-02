@@ -149,7 +149,7 @@ switch(async_load[?"type"]) {
 					sprite_index = imagem[9]				//carrega sprite de morte
 				}
 				
-				global.jogadores_mortos ++			//conta a morte do oponente
+				global.jogadores_mortos ++					//conta a morte do oponente
 				if global.lider obj_cliente.alarm[0] = 30	//se for lider tempo para verificar jogadores mortos
 				break
 			
@@ -172,6 +172,11 @@ switch(async_load[?"type"]) {
 				break
 				
 			case "Placar!":
+				//atribui pontuacao ao jogador informado no "item"
+				with (global.jogadores[(real_data[? "item"])]) {
+					pontos ++
+				}
+				
 				room_goto(rm_placar)		//carrega tela de placar
 				break 
 				
