@@ -68,6 +68,7 @@
     {"id":{"name":"obj_menu","path":"objects/obj_menu/obj_menu.yy",},},
     {"id":{"name":"obj_oponente","path":"objects/obj_oponente/obj_oponente.yy",},},
     {"id":{"name":"obj_parede","path":"objects/obj_parede/obj_parede.yy",},},
+    {"id":{"name":"obj_placar","path":"objects/obj_placar/obj_placar.yy",},},
     {"id":{"name":"obj_planta","path":"objects/obj_planta/obj_planta.yy",},},
     {"id":{"name":"obj_player_select","path":"objects/obj_player_select/obj_player_select.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},

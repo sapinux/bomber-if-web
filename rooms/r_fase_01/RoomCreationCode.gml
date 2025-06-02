@@ -94,6 +94,7 @@ if instance_exists(obj_bonus_chutar_bomba) obj_bonus_chutar_bomba.visible = true
 if instance_exists(obj_bonus_luva) obj_bonus_luva.visible = true
 if instance_exists(obj_bonus_poder_bomba) obj_bonus_poder_bomba.visible = true
 
+//posicoes na fase 01
 var posicoes = [ [48, 32], [256, 224], [32, 208], [288, 64], [112, 160], [208, 96], [256, 144], [64, 112], [160, 208], [160, 48]] 
 
 scr_posicionar_jogador(obj_player, global.cliente_id, posicoes)						//posicionar jogador na arena
