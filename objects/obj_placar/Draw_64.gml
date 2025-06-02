@@ -1,6 +1,5 @@
 draw_set_font(fnt_01);						//definir a fonte
 var oponente
-//var cont = 0
 
 for (var i = 0; i < instance_number(obj_oponente) ; i ++) {
 	
@@ -11,20 +10,13 @@ for (var i = 0; i < instance_number(obj_oponente) ; i ++) {
 	draw_set_color(c_white)						//cor do texto
 	
 	with (oponente) {
-//		if cont < 5 {
-			draw_text(x + 5, y, "Jogador " + string(array_get_index(global.jogadores, id)) + ": " + string(pontos)) 
-			
-//		} else 
-//			draw_text(200, (room_height / 2 - 25) + (20 * cont), "Jogador " + string(array_get_index(global.jogadores, id)) + ": " + string(pontos)) 
-				
-//		cont ++
-		// if cont == 5 cont = 0 PAREI AQUI
+			//draw_text(x + 25, y, string(array_get_index(global.jogadores, id)) + "   " + string(pontos)) 
+			draw_text(x + 20, y, "   " + string(pontos))
 	}
 }
+
 //jogador local
 with (global.jogadores[global.cliente_id]) {
-//	if cont < 2
-		draw_text(x + 5, y, "Jogador " + string(global.cliente_id) + ": " + string(pontos))
-//	else
-//		draw_text(200, (room_height / 2 - 25) + (20 * cont), "Jogador " + string(global.cliente_id) + ": " + string(pontos))
+	//draw_text(x + 25, y, string(global.cliente_id) + "   " + string(pontos))
+	draw_text(x + 20, y, "   " + string(pontos))
 }

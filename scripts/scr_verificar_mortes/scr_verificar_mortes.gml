@@ -10,7 +10,7 @@ function scr_verificar_mortes() {
 				
 			scr_enviar("placar", "item", scr_verificar_vencedor())		//envia p o server o id do vencedor
 			room_goto(rm_placar)										//tela de placar
-			obj_cliente.alarm[1] = 90									//3 segundos mostrando placar
+			obj_cliente.alarm[1] = 150									//3 segundos mostrando placar
 		}
 }
 
