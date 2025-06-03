@@ -157,8 +157,8 @@ switch(async_load[?"type"]) {
 				
 				with (global.jogadores[(real_data[? "jogador"])]) {
 					if vivo == false								//se o morto saiu
-						global.jogadores_mortos --				//equilibra o contador de morte do oponente
-					instance_destroy()						//destroi o obj_oponente
+						global.jogadores_mortos --					//equilibra o contador de morte do oponente
+					instance_destroy()								//destroi o obj_oponente
 				}
 								
 				//instance_destroy(global.jogadores[(real_data[? "jogador"])])
@@ -167,8 +167,9 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Novo lider!":
-				global.lider = true			//assume a liderança
-				scr_enviar("lider");		//notifica o server a liderança
+				global.lider = true								//assume a liderança
+				scr_enviar("lider");							//notifica o server a liderança
+				if room == rm_placar obj_cliente.alarm[1] = 30	//se estiver na tela de placar, assume o alarm[1]
 				break
 				
 			case "Placar!":

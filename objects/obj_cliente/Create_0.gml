@@ -7,6 +7,6 @@ global.controle_jogadores = []										//controlar jogadores armazenando seu id
 global.jogadores_mortos = 0											//contar oponentes mortos na partida
 
 global.socket = network_create_socket(network_socket_ws)			//tipo de conexao com o server
-global.ip = "200.131.5.41"											//ip do server
+global.ip = "127.0.0.1"												//ip do server
 global.porta = 3000													//porta utilizada no server
 network_connect_raw_async(global.socket, global.ip, global.porta)	//conexao com o server
