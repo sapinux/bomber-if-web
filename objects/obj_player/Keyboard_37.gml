@@ -3,7 +3,7 @@ if vivo {
 	sprite_index = imagem[4]	//parado p esquerda
 	
 	//esquerda
-	if !place_meeting(x - vel, y, obj_planta) 		//se não houver planta
+	if !place_meeting(x - vel, y, obj_planta) && !place_meeting(x - vel, y, obj_limite) && !place_meeting(x - vel, y, obj_parede) 		//se não houver planta
 		if (place_free(x - vel, y)) || (place_meeting(x - vel, y, obj_explosao)) || (place_meeting(x - vel, y, obj_oponente)) 
 			|| (place_meeting(x - vel, y, obj_bonus_bomba)) { 
 			x -= vel								

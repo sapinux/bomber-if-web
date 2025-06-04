@@ -2,7 +2,7 @@ if vivo {
 	direcao = "baixo"
 	sprite_index = imagem[1]
 	//cima
-	if !place_meeting(x , y + vel, obj_planta)		//se não houver planta	
+	if !place_meeting(x , y + vel, obj_planta) && !place_meeting(x , y + vel, obj_limite) && !place_meeting(x , y + vel, obj_parede) 		//se não houver planta	
 		if (place_free(x , y + vel)) || (place_meeting(x, y + vel, obj_explosao)) || (place_meeting(x, y + vel, obj_oponente)) 
 			|| (place_meeting(x, y + vel, obj_bonus_bomba)) {
 			y += vel
