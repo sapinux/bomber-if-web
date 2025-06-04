@@ -66,6 +66,7 @@
     {"id":{"name":"obj_cliente","path":"objects/obj_cliente/obj_cliente.yy",},},
     {"id":{"name":"obj_configuracoes","path":"objects/obj_configuracoes/obj_configuracoes.yy",},},
     {"id":{"name":"obj_controler","path":"objects/obj_controler/obj_controler.yy",},},
+    {"id":{"name":"obj_empate","path":"objects/obj_empate/obj_empate.yy",},},
     {"id":{"name":"obj_explosao","path":"objects/obj_explosao/obj_explosao.yy",},},
     {"id":{"name":"obj_game_config","path":"objects/obj_game_config/obj_game_config.yy",},},
     {"id":{"name":"obj_limite","path":"objects/obj_limite/obj_limite.yy",},},

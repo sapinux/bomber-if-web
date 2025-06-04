@@ -150,7 +150,7 @@ switch(async_load[?"type"]) {
 				}
 				
 				global.jogadores_mortos ++					//conta a morte do oponente
-				if global.lider obj_cliente.alarm[0] = 30	//se for lider tempo para verificar jogadores mortos
+				if global.lider obj_cliente.alarm[0] = 20	//se for lider tempo para verificar jogadores mortos
 				break
 			
 			case "Oponente saiu!":
