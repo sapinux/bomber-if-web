@@ -69,7 +69,7 @@ switch(async_load[?"type"]) {
 						
 			case "Iniciar partida!":
 				//se estiver na tela de selecao de personagem
-				if instance_exists(obj_player_select) scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
+				if room == rm_player_select scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
 				//caso contrario carrega a fase de batalha
 				else room_goto(r_fase_01)
 				break
