@@ -169,7 +169,7 @@ switch(async_load[?"type"]) {
 			case "Novo lider!":
 				global.lider = true								//assume a liderança
 				scr_enviar("lider");							//notifica o server a liderança
-				if room == rm_placar obj_cliente.alarm[1] = 30	//se estiver na tela de placar, assume o alarm[1]
+				if (room == rm_placar || room == rm_empate) obj_cliente.alarm[1] = 30	//se estiver na tela de placar, assume o alarm[1]
 				break
 				
 			case "Placar!":
