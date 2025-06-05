@@ -13,6 +13,7 @@ draw_set_font(fnt_01);						//definir a fonte
 		if (tempo == 0 && global.lider) {
 			scr_enviar("iniciar_partida")	//envia para os jogadores
 			scr_escolher_jogador(x, y)		//definir o personagem
+			room_goto(r_fase_01)			//carrega a fase de batalha
 		}
 		if tempo > 0 tempo --
 	} 

@@ -70,8 +70,8 @@ switch(async_load[?"type"]) {
 			case "Iniciar partida!":
 				//se estiver na tela de selecao de personagem
 				if room == rm_player_select scr_escolher_jogador(obj_player_select.x, obj_player_select.y)	//definir o personagem
-				//caso contrario carrega a fase de batalha
-				else room_goto(r_fase_01)
+				
+				room_goto(r_fase_01)	//carrega a fase de batalha
 				break
 			
 			case "Jogador escolhido!":
@@ -146,11 +146,11 @@ switch(async_load[?"type"]) {
 			case "Morreu!":
 				with (global.jogadores[(real_data[? "jogador"])]) {
 					vivo = false
-					sprite_index = imagem[9]				//carrega sprite de morte
+					sprite_index = imagem[9]						//carrega sprite de morte
 				}
 				
-				global.jogadores_mortos ++					//conta a morte do oponente
-				if global.lider obj_cliente.alarm[0] = 20	//se for lider tempo para verificar jogadores mortos
+				global.jogadores_mortos ++							//conta a morte do oponente
+				if global.lider obj_cliente.alarm[0] = 20			//se for lider aciona alarm[0] para verificar jogadores mortos, (0,7 seg)
 				break
 			
 			case "Oponente saiu!":
@@ -166,8 +166,8 @@ switch(async_load[?"type"]) {
 				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				
 				if !instance_exists(obj_oponente)	{
-					scr_enviar("sair")				//se não houver mais ninguem na partida - envia p o server sair da sala
-					room_goto(rm_01)				//retorna para a tela inicial do jogo
+					scr_enviar("sair")								//se não houver mais ninguem na partida - envia p o server sair da sala
+					room_goto(rm_01)								//retorna para a tela inicial do jogo
 				}
 				break
 			

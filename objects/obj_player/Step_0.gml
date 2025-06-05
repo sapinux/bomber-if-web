@@ -15,6 +15,6 @@ if visible {
 			global.jogadores_mortos ++	//conta a morte do oponente
 		}
 		script_execute(scr_jogador_morrendo)		//aciona o sprite de morte
-		if global.lider obj_cliente.alarm[0] = 20	//se for lider inicia alarm do obj_cliente para verificar jogadores mortos (0,7 segundos)
+		if global.lider obj_cliente.alarm[0] = 20	//se for lider inicia alarm[0] do obj_cliente para verificar jogadores mortos (0,7 segundos)
 	}
 }
