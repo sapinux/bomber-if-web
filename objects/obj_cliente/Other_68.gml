@@ -165,8 +165,10 @@ switch(async_load[?"type"]) {
 				global.jogadores[(real_data[? "jogador"])] = 0						//atribui 0 para o vetor do jogador que saiu
 				global.controle_jogadores[(real_data[? "jogador"])] = 0				//atribui 0 para o vetor do jogador que saiu
 				
-				if !instance_exists(obj_oponente)	scr_enviar("sair")				//se não houver mais ninguem na partida - sai da sala
-				
+				if !instance_exists(obj_oponente)	{
+					scr_enviar("sair")				//se não houver mais ninguem na partida - envia p o server sair da sala
+					room_goto(rm_01)				//retorna para a tela inicial do jogo
+				}
 				break
 			
 			case "Novo lider!":
