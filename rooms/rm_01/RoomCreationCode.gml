@@ -17,7 +17,7 @@ if instance_exists(obj_cliente) {
 		global.jogadores = []												//vetor para armazenar o id do oponente
 		global.controle_jogadores = []										//controlar jogadores armazenando seu id definido pelo server
 		global.jogadores_mortos = 0											//contar oponentes mortos na partida
-		
+		alarm[0] = noone													//desativa alarme[0]
 		alarm[1] = noone													//desativa alarme[1]
 	}
 }
