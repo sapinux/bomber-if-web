@@ -1,5 +1,15 @@
 function scr_escolher_jogador(x, y) {
 	switch (x) {
+		case 64:
+			switch (y) {
+				case 128:
+					global.player = "navy"
+					break
+				case 160:
+					global.player = "salmon"
+					break
+			}
+			break
 		case 96:
 			switch (y) {
 				case 128:
@@ -47,6 +57,16 @@ function scr_escolher_jogador(x, y) {
 					break
 				case 160:
 					global.player = "yellow"
+					break
+				}
+			break
+		case 256:
+			switch (y) {
+				case 128:
+					global.player = "burgundy"
+					break
+				case 160:
+					global.player = "cream"
 					break
 				}
 			break

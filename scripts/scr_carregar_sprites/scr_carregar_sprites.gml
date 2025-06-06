@@ -119,6 +119,54 @@ function scr_carregar_sprites(player, cor){
 				player.imagem[7] = spr_yellow_andando_dir
 				player.imagem[8] = spr_yellow_andando_esq
 				player.imagem[9] = spr_yellow_morrendo
-				break	
+				break
+			case "burgundy":
+				player.imagem[0] = spr_burgundy
+				player.imagem[1] = spr_burgundy_parado_baixo
+				player.imagem[2] = spr_burgundy_parado_cima
+				player.imagem[3] = spr_burgundy_parado_dir
+				player.imagem[4] = spr_burgundy_parado_esq
+				player.imagem[5] = spr_burgundy_andando_baixo
+				player.imagem[6] = spr_burgundy_andando_cima
+				player.imagem[7] = spr_burgundy_andando_dir
+				player.imagem[8] = spr_burgundy_andando_esq
+				player.imagem[9] = spr_burgundy_morrendo
+				break
+			case "cream":
+				player.imagem[0] = spr_cream
+				player.imagem[1] = spr_cream_parado_baixo
+				player.imagem[2] = spr_cream_parado_cima
+				player.imagem[3] = spr_cream_parado_dir
+				player.imagem[4] = spr_cream_parado_esq
+				player.imagem[5] = spr_cream_andando_baixo
+				player.imagem[6] = spr_cream_andando_cima
+				player.imagem[7] = spr_cream_andando_dir
+				player.imagem[8] = spr_cream_andando_esq
+				player.imagem[9] = spr_cream_morrendo
+				break
+			case "navy":
+				player.imagem[0] = spr_navy
+				player.imagem[1] = spr_navy_parado_baixo
+				player.imagem[2] = spr_navy_parado_cima
+				player.imagem[3] = spr_navy_parado_dir
+				player.imagem[4] = spr_navy_parado_esq
+				player.imagem[5] = spr_navy_andando_baixo
+				player.imagem[6] = spr_navy_andando_cima
+				player.imagem[7] = spr_navy_andando_dir
+				player.imagem[8] = spr_navy_andando_esq
+				player.imagem[9] = spr_navy_morrendo
+				break
+			case "salmon":
+				player.imagem[0] = spr_salmon
+				player.imagem[1] = spr_salmon_parado_baixo
+				player.imagem[2] = spr_salmon_parado_cima
+				player.imagem[3] = spr_salmon_parado_dir
+				player.imagem[4] = spr_salmon_parado_esq
+				player.imagem[5] = spr_salmon_andando_baixo
+				player.imagem[6] = spr_salmon_andando_cima
+				player.imagem[7] = spr_salmon_andando_dir
+				player.imagem[8] = spr_salmon_andando_esq
+				player.imagem[9] = spr_salmon_morrendo
+				break
 		}
 }
