@@ -172,10 +172,10 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Novo lider!":
-				global.lider = true								//vc assume a liderança
-				scr_enviar("lider");							//notifica o server a liderança
+				global.lider = true														//vc assume a liderança
+				scr_enviar("lider");													//notifica o server a liderança
 				if (room == rm_placar || room == rm_empate) obj_cliente.alarm[1] = 30	//se estiver na tela de placar, assume o alarm[1]
-				if (room == r_fase_01)	obj_cliente.alarm[0] = 20	//se for lider inicia alarm[0] do obj_cliente para verificar jogadores mortos (0,7 segundos)							//verifica mortes
+				if (room == r_fase_01)	obj_cliente.alarm[0] = 20						//se for lider inicia alarm[0] do obj_cliente para verificar jogadores mortos (0,7 segundos)							//verifica mortes
 				break
 				
 			case "Placar!":

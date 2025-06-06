@@ -8,3 +8,5 @@ global.chutar_bomba = false		//poder para chutar a bomba
 global.luva = false				//poder para lancar a bomba
 global.id_pai = 0				//ira receber o id do player c
 global.player = ""				//player padrao
+
+global.tempo_placar = 150		//tempo de tela de placar e empate
