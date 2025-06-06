@@ -67,6 +67,7 @@
     {"id":{"name":"obj_bonus_chutar_bomba","path":"objects/obj_bonus_chutar_bomba/obj_bonus_chutar_bomba.yy",},},
     {"id":{"name":"obj_bonus_luva","path":"objects/obj_bonus_luva/obj_bonus_luva.yy",},},
     {"id":{"name":"obj_bonus_poder_bomba","path":"objects/obj_bonus_poder_bomba/obj_bonus_poder_bomba.yy",},},
+    {"id":{"name":"obj_campeao","path":"objects/obj_campeao/obj_campeao.yy",},},
     {"id":{"name":"obj_cliente","path":"objects/obj_cliente/obj_cliente.yy",},},
     {"id":{"name":"obj_configuracoes","path":"objects/obj_configuracoes/obj_configuracoes.yy",},},
     {"id":{"name":"obj_controler","path":"objects/obj_controler/obj_controler.yy",},},
@@ -83,6 +84,7 @@
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"r_fase_01","path":"rooms/r_fase_01/r_fase_01.yy",},},
     {"id":{"name":"rm_01","path":"rooms/rm_01/rm_01.yy",},},
+    {"id":{"name":"rm_campeao","path":"rooms/rm_campeao/rm_campeao.yy",},},
     {"id":{"name":"rm_config","path":"rooms/rm_config/rm_config.yy",},},
     {"id":{"name":"rm_empate","path":"rooms/rm_empate/rm_empate.yy",},},
     {"id":{"name":"rm_placar","path":"rooms/rm_placar/rm_placar.yy",},},
@@ -259,6 +261,7 @@
     {"roomId":{"name":"rm_player_select","path":"rooms/rm_player_select/rm_player_select.yy",},},
     {"roomId":{"name":"rm_placar","path":"rooms/rm_placar/rm_placar.yy",},},
     {"roomId":{"name":"rm_empate","path":"rooms/rm_empate/rm_empate.yy",},},
+    {"roomId":{"name":"rm_campeao","path":"rooms/rm_campeao/rm_campeao.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

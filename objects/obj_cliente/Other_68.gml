@@ -190,6 +190,11 @@ switch(async_load[?"type"]) {
 			case "Empate!":
 				room_goto(rm_empate)		//carrega tela de empate
 				break
+			
+			case "Campeao!":
+				room_goto(rm_campeao)		//carrega tela de campeao
+				obj_cliente.alarm[1] = global.tempo_placar	
+				break
 				
 		}
 		break
