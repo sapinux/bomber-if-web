@@ -97,6 +97,7 @@
     {"id":{"name":"scr_jogador_fantasma","path":"scripts/scr_jogador_fantasma/scr_jogador_fantasma.yy",},},
     {"id":{"name":"scr_jogador_morrendo","path":"scripts/scr_jogador_morrendo/scr_jogador_morrendo.yy",},},
     {"id":{"name":"scr_limpar_bonus","path":"scripts/scr_limpar_bonus/scr_limpar_bonus.yy",},},
+    {"id":{"name":"scr_posicionar_campeao","path":"scripts/scr_posicionar_campeao/scr_posicionar_campeao.yy",},},
     {"id":{"name":"scr_posicionar_jogador","path":"scripts/scr_posicionar_jogador/scr_posicionar_jogador.yy",},},
     {"id":{"name":"scr_verificar_mortes","path":"scripts/scr_verificar_mortes/scr_verificar_mortes.yy",},},
     {"id":{"name":"spr_blue_andando_baixo","path":"sprites/spr_blue_andando_baixo/spr_blue_andando_baixo.yy",},},
