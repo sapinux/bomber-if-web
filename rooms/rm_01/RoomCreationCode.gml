@@ -1,3 +1,4 @@
+//room rm 01 - Tela principal
 //destroi todas as instancias persistentes
 if instance_exists(obj_player) instance_destroy(obj_player)
 if instance_exists(obj_oponente) instance_destroy(obj_oponente)

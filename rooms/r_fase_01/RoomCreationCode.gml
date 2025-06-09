@@ -1,3 +1,4 @@
+//room fase 01
 scr_limpar_bonus()				//realizar lipeza dos bonus
 
 
