@@ -10,5 +10,5 @@ global.id_pai = 0				//ira receber o id do player c
 global.player = ""				//player padrao
 
 global.tempo_placar = 150		//tempo de tela de placar e empate
-global.pontuacao = 3	
+global.pontuacao = 10	
 //pontuacao para definir campeao
