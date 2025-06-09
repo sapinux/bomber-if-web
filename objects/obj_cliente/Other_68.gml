@@ -47,7 +47,7 @@ switch(async_load[?"type"]) {
 				scr_enviar("Create oponente")	//envia para o jogador que voce está na sala
 				
 				//cronometrar inicio da partida após jogador entrar na sala
-				obj_player_select.tempo = 300		//10 segundos		
+				obj_player_select.tempo = 600		//10 segundos		
 								
 				break
 				
@@ -63,7 +63,7 @@ switch(async_load[?"type"]) {
 				}
 				
 				//cronometrar inicio da partida	após jogador entrar na sala
-				obj_player_select.tempo = 300		//10 segundos
+				obj_player_select.tempo = 600		//10 segundos
 				
 				break
 						
@@ -192,6 +192,11 @@ switch(async_load[?"type"]) {
 				break
 			
 			case "Campeao!":
+				//atribui pontuacao ao jogador informado no "item"
+				with (global.jogadores[(real_data[? "item"])]) {
+					pontos ++
+				}
+				
 				room_goto(rm_campeao)		//carrega tela de campeao
 				obj_cliente.alarm[1] = global.tempo_placar	
 				break

@@ -4,12 +4,12 @@ function scr_posicionar_campeao(player, player_id, posicoes) {
 	with (player) {
 		//realiza uma vistoria em todos os jogadores
 		for (i = 1; i < array_length(global.controle_jogadores); i ++) {	//PAREI AQUI
-			if global.controle_jogadores[i] != 0 {						//se for diferente de zero é jogador ativo
-				if global.jogadores[i].pontos > pontos			//se a pontuacao for maior
-					posicao ++											//aumenta a posicao
-				else if global.jogadores[i].pontos == pontos 	//se tiver a mesma pontuacao
-					if i < player_id									//se o indice for menor 
-						posicao ++										//aumenta a posicao
+			if global.controle_jogadores[i] != 0 {							//se for diferente de zero é jogador ativo
+				if global.jogadores[i].pontos > pontos						//se a pontuacao for maior
+					posicao ++												//aumenta a posicao
+				else if global.jogadores[i].pontos == pontos  				//se tiver a mesma pontuacao
+					if i < player_id										//se o indice for menor 
+						posicao ++											//aumenta a posicao
 			}
 		}
 	

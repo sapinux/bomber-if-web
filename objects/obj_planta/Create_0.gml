@@ -1,2 +1,2 @@
 //teste temporario
-image_alpha = 0.8
+image_alpha = 1

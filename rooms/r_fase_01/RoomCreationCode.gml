@@ -22,7 +22,7 @@ if global.lider {
 			cont ++
 		}	
 	}
-	until (cont == 10)										//quantidade de icones de bombas
+	until (cont == 15)										//quantidade de icones de bombas
 
 	//distribuir icones de poder bomba
 	cont = 0
@@ -36,7 +36,7 @@ if global.lider {
 			cont ++
 		}	
 	}
-	until (cont == 10)										//quantidade de icones de poder bomba
+	until (cont == 20)										//quantidade de icones de poder bomba
 
 	//distribuir icones de chutar bomba
 	cont = 0
@@ -50,7 +50,7 @@ if global.lider {
 			cont ++
 		}	
 	}
-	until (cont == 4)										//quantidade de icones de chutar bomba
+	until (cont == 5)										//quantidade de icones de chutar bomba
 
 	//distribuir icones de luva
 	cont = 0
@@ -64,7 +64,7 @@ if global.lider {
 			cont ++
 		}	
 	}
-	until (cont == 2)										//quantidade de icones de chutar bomba
+	until (cont == 3)										//quantidade de icones de chutar bomba
 }
 
 global.jogadores_mortos = 0		//zera o contador de mortos
