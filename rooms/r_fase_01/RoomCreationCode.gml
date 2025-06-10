@@ -73,7 +73,7 @@ if instance_exists(obj_player) {
 	with (global.jogadores[global.cliente_id]) {
 		vel = global.player_velocidade;				//velocidade em pixels
 		bombas = global.bombas						//quantidade  de bombas
-		poder_bomba = global.poder_bomba				//alcance da explosao
+		poder_bomba = global.poder_bomba			//alcance da explosao
 		vivo = true									//situacao de vida
 		visible = true
 		image_alpha = 1								//recupera a opacidade
