@@ -1,3 +1,4 @@
+//room empate
 if instance_exists(obj_player) {
 	with (global.jogadores[global.cliente_id]) {
 		visible = true				//torna visivel
